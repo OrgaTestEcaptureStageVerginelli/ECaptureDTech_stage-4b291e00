@@ -1,0 +1,36 @@
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-ast # Verify the python syntax (need to be correct)
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.19.1
+    hooks:
+      - id: mypy
+        args: [--ignore-missing-imports, --disallow-untyped-defs, --disallow-incomplete-defs]
+        # missing import : Does not fail if optional libraries are missing
+        # untyped def, (incomplete def) : recquire functions to have (complete) annotation
+        additional_dependencies: [pydantic, fastapi, types-requests, types-setuptools]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.2
+    hooks:
+      - id: codespell                # Checks spelling (ignores your alias wisrovi)
+        args: ["-L", "wisrovi"]
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.9.4
+    hooks:
+      - id: bandit
+        args: ["-lll", "-v"]         # Security analysis (medium/high severity)
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.5
+    hooks:                           # linter and formatter for the developpers
+      - id: ruff                     # Ultra-fast linter with auto-fix capabilities
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format              # Code formatter (Black style)
