@@ -1,0 +1,18 @@
+# --- Framework & Serveur ---
+fastapi
+uvicorn
+
+# --- Tests ---
+pytest
+httpx
+
+# --- Quality & Pre-commit ---
+pre-commit
+mypy
+ruff
+codespell
+bandit
+
+# --- Types for Mypy ---
+types-requests
+types-setuptools
