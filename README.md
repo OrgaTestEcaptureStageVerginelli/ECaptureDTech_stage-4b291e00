@@ -2,7 +2,7 @@
 
 Automatisation internship
 
-How to run this project :
-  python -m venv .venv
-  source .venv/bin/activate
-  pip install -r requirements.txt
+How to run this project : \n
+  python -m venv .venv \n
+  source .venv/bin/activate \n
+  pip install -r requirements.txt \n
