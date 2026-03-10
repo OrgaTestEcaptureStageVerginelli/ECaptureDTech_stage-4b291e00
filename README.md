@@ -5,4 +5,11 @@ Automatisation internship
 How to run this project :   
   python -m venv .venv  
   source .venv/bin/activate   
-  pip install -r requirements.txt   
+  pip install -r requirements.txt  
+
+
+To run FastAPI, go to EcaptureDTech_stage/local :  
+fastapi dev  
+
+To run the tests, go to EcaptureDTech/ :  
+python tests.py
