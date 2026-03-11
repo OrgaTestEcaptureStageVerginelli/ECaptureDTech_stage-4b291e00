@@ -82,10 +82,10 @@ repos:
     hooks:
       - id: shellcheck               # Static analysis for Bash scripts
 
-  # - repo: https://github.com/pypa/pip-audit
-  #   rev: v2.10.0
-  #   hooks:
-  #     - id: pip-audit               # tool for scanning Python environments for packages with known vulnerabilities
-  #       verbose: true               # in comment because pytest is deprecated, and asked to use pytest explicitely
-                                      # recommandation : uncomment as soon as possible, important tool for the security
-  #       args: ["--requirement", "requirements.txt"]
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.10.0
+    hooks:
+      - id: pip-audit               # tool for scanning Python environments for packages with known vulnerabilities
+        verbose: true
+        args: ["--requirement", "requirements.txt", "--ignore-vuln", "PYSEC-2022-42969"] #ignore this particular vulnerability because it is linked to pytest
+                                                                                         #which was explicitly requested

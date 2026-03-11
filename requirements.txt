@@ -15,7 +15,7 @@ bandit
 interrogate
 detect-secrets
 checkov
-#pip-audit          #comment : see detail in .pre-commit-config.yaml
+pip-audit
 
 # --- Types for Mypy ---
 types-requests
