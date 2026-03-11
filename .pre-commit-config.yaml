@@ -5,7 +5,15 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: check-ast # Verify the python syntax (need to be correct)
+      - id: check-ast
+        verbose: true
+      - id: check-yaml
+        verbose: true
+      - id: check-json
+        verbose: true
+      - id: end-of-file-fixer
+        verbose: true
+      - id: trailing-whitespace
         verbose: true
 
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -30,7 +38,7 @@ repos:
     hooks:
       - id: bandit
         verbose: true
-        args: ["-lll", "-v"]         # Security analysis (medium/high severity)
+        args: ["-ll", "-v"]         # Security analysis (medium/high severity)
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.5
@@ -40,3 +48,44 @@ repos:
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format              # Code formatter (Black style)
         verbose: true
+
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.14.0
+    hooks:
+      - id: hadolint                # linter for dockerfile - help to build best practice Docker image
+        verbose: true
+
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 3.2.508
+    hooks:
+      - id: checkov                 # permit to detect misconfiguration before deployment
+        verbose: true
+        args: ["--directory", ".", "--compact", "--soft-fail"]
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets          # permit to detect the presence of secrets (credentials for instance) in code or commit message
+        verbose: true
+        args: ['--baseline', '.secrets.baseline']
+
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.7.0
+    hooks:
+      - id: interrogate             # permit to detect missing doctring
+        verbose: true
+        args: ["-vv", "--fail-under=80"]
+
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck               # Static analysis for Bash scripts
+
+  # - repo: https://github.com/pypa/pip-audit
+  #   rev: v2.10.0
+  #   hooks:
+  #     - id: pip-audit               # tool for scanning Python environments for packages with known vulnerabilities
+  #       verbose: true               # in comment because pytest is deprecated, and asked to use pytest explicitely
+                                      # recommandation : uncomment as soon as possible, important tool for the security
+  #       args: ["--requirement", "requirements.txt"]

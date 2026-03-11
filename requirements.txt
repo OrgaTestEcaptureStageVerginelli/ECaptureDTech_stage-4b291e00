@@ -12,6 +12,10 @@ mypy
 ruff
 codespell
 bandit
+interrogate
+detect-secrets
+checkov
+#pip-audit          #comment : see detail in .pre-commit-config.yaml
 
 # --- Types for Mypy ---
 types-requests
