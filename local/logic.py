@@ -49,3 +49,14 @@ def calculate_discount(price: float, discount_percent: float) -> float:
         The discounted price as a float.
     """
     return price * (1 - (discount_percent / 100))
+
+
+def format_greeting(name: str) -> str:
+    """Formats a greeting message for the given name.
+
+    Args:
+        name: The name of the person to greet.
+    Returns:
+        A greeting message string.
+    """
+    return f"Hello, {name}! Welcome to our service."
