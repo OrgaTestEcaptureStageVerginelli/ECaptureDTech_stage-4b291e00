@@ -3,6 +3,7 @@
 import subprocess
 from typing import List
 
+
 class TaskManager:
     """Handles task execution securely."""
 
@@ -14,6 +15,7 @@ class TaskManager:
         """
         # Secure execution without shell=True to satisfy Bandit
         subprocess.run(["echo", cmd], check=True)
+
 
 def get_status() -> List[str]:
     """Returns the current system status."""
