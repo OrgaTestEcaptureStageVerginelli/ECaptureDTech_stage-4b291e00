@@ -8,7 +8,6 @@ for f in *.py; do
     cat "$f"
 done
 
-
 # #!/bin/bash
 # # ShellCheck Error: Variable is unquoted, may break on spaces
 # echo $USER_INPUT

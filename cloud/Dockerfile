@@ -16,6 +16,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 CMD ["python", "app.py"]
 
+
 # # Hadolint Error: Always use a specific version instead of 'latest' (DL3006)
 # FROM python:latest
 
