@@ -305,4 +305,3 @@ jobs:
           pip-audit \
             --requirement requirements.txt \
             --ignore-vuln PYSEC-2022-42969
-                                          
