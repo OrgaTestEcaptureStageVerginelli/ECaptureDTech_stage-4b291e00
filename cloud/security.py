@@ -14,7 +14,6 @@ class TaskManager:
 # Ruff Error: Unused variable and trailing whitespace (Job #5)
 x = 5
 
-
 # """Module providing secure task management utilities."""
 
 # import subprocess
