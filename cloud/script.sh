@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # Properly quoted variables to satisfy ShellCheck
 echo "${USER_INPUT}"
 
