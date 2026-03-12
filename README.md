@@ -21,4 +21,4 @@ For the Pre-Commit feature :
 
 You can use the command : pre-commit autoupdate to update all your repo in .pre-commit-config.yaml (auto fix)
 
-**IMPORTANT : if you want to test the pre-commit rules for your code before commiting run the command : pre-commit run --all-files**
+**IMPORTANT : if you want to test the pre-commit rules for your code before committing run the command : pre-commit run --all-files**
