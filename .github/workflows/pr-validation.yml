@@ -142,7 +142,7 @@ jobs:
 
       - name: Fail if unfixable errors remain   # ← échec APRÈS le commit de fix
         run: ruff check . --exit-non-zero-on-fix
-        
+
   # ──────────────────────────────────────────────
   # 6. Dockerfile linting — hadolint
   #    Only scans Dockerfiles changed in the PR
